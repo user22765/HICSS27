@@ -1,0 +1,68 @@
+{
+  "$defs": {
+    "Reference": {
+      "description": "Bibliographic reference for the scale used to measure the construct",
+      "properties": {
+        "authors": {
+          "anyOf": [{"items": {"type": "string"}, "type": "array"}, {"type": "null"}],
+          "default": null,
+          "description": "List of author names",
+          "title": "Authors"
+        },
+        "title": {
+          "anyOf": [{"type": "string"}, {"type": "null"}],
+          "default": null,
+          "description": "Title of the referenced work",
+          "title": "Title"
+        },
+        "year": {
+          "anyOf": [{"type": "integer"}, {"type": "null"}],
+          "default": null,
+          "description": "Publication year",
+          "title": "Year"
+        },
+        "published_in": {
+          "anyOf": [{"type": "string"}, {"type": "null"}],
+          "default": null,
+          "description": "Journal, conference, or venue the work was published in",
+          "title": "Published In"
+        }
+      },
+      "title": "Reference",
+      "type": "object"
+    },
+    "Construct": {
+      "description": "Measurements of constructs",
+      "properties": {
+        "name": {
+          "description": "Name of the construct",
+          "title": "Name",
+          "type": "string"
+        },
+        "definition": {
+          "type": "string",
+          "description": "Textual definition of the construct",
+          "title": "Definition"
+        },
+        "references": {
+          "anyOf": [{"items": {"$ref": "#/$defs/Reference"}, "type": "array"}, {"type": "null"}],
+          "default": null,
+          "description": "List of references if the construct is measured using one or more existing (possibly adapted or combined) scales; null if no cited scale is used",
+          "title": "References"
+        },
+        "items": {
+          "anyOf": [{"items": {}, "type": "array"}, {"type": "null"}],
+          "default": null,
+          "description": "List of measurement items associated with the construct",
+          "title": "Items"
+        }
+      },
+      "required": ["name"],
+      "title": "Construct",
+      "type": "object"
+    }
+  },
+  "items": {"$ref": "#/$defs/Construct"},
+  "title": "ConstructList",
+  "type": "array"
+}

@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "Relation": {
+      "properties": {
+        "cause": {
+          "title": "Cause",
+          "type": "string"
+        },
+        "effect": {
+          "title": "Effect",
+          "type": "string"
+        },
+        "model_id": {
+          "title": "Model Id",
+          "type": "string"
+        },
+        "moderator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Moderator"
+        },
+        "mediator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mediator"
+        },
+        "beta": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Path coefficient beta"
+        },
+        "p": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "p-value"
+        },
+        "hypothesis_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hypothesis Id"
+        }
+      },
+      "required": [
+        "cause",
+        "effect",
+        "model_id"
+      ],
+      "title": "Relation",
+      "type": "object"
+    }
+  },
+  "items": {
+    "$ref": "#/$defs/Relation"
+  },
+  "type": "array"
+}
+

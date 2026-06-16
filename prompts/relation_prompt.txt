@@ -1,0 +1,37 @@
+The following article uses structural equation modelling to test causal hypotheses.
+Your goal: Extract all hypothesized and tested causal relations.
+
+In some articles, relations are presented for different models or subsamples of the data - identify all of them.
+First, extract *all* hypothesized relations (do not miss any!) consisting of the following elements:
+- cause
+- effect
+- mediator or moderator (if the relation is moderated or mediated)
+- hypothesis id
+- sign (e.g., positive or negative)
+Then, go through the text and extract *all* tested relations consisting of:
+- cause,
+- effect,
+- mediator,
+- moderator,
+- path coefficient (beta, in rare cases gamma),
+- p-value,
+- a hypothesis id (if mentioned in the text)
+- a model id which the relation belongs to. The default value when only one model is presented is "Main model"
+For each extraction (hypothesized and tested) verify that you in deed correctly extracted the information to ensure the the best quality output.
+For each relation briefly mention the location in the text where you found the relevant information. For mediated relations, clearly indicate the beta and significance that refer to the indirect effect. For moderated relations, clearly indicate the beta and significance that refer to the interaction term. In some cases, path coefficients are given for different sub-samples of the data that correspond to categorical moderators. In these cases, do not name the moderator in the relation, but provide a direct relation for each sub-sample and indicate this in the model id field.
+Ensure that each variable (cause, effect, moderator, mediator) is just one variable name. It is not possible that one of these variables contains multiple variable names.
+
+Be careful to not confuse correlation coefficients for path coefficients! Do not extract relations from correlation tables. If possible, avoid abbreviations or acronyms in the variable names.
+Your extractions will be used to train downstream models. Thus, your output has to be high quality and cannot contain any mistakes! Be sure to not miss any information from the paper!
+
+Format your findings on the *tested* relations as a valid JSON. The JSON should be surrounded by “```json ```” such that it can be automatically extracted from your response. It should be an exhaustive list of dictionaries where each dictionary correspond to one tested relation - do not miss any relation you identified! Strictly follow these rules:
+1. Do not deviate from the structure below!
+2. For a direct relation there should be the keys "cause" (str), "effect" (str), "beta" (float or null), "p" (str or float or null), "hypothesis_id" (str or null), "model_id" (str).
+3. For mediated relations there should be the keys "cause" (str), "effect" (str), "mediator" (str), "beta" (float or null) (which means the indirect effect), "p" (str or float or null) (for the indirect effect), "hypothesis_id" (str or null), "model_id" (str).
+4. For moderated relations there should be the keys "cause" (str), "effect" (str), "moderator" (str), "beta" (float or null) (which is the interaction term), "p" (str or float or null) (for the interaction term), "hypothesis_id" (str or null), "model_id" (str).
+5. If a value is not present, set it to null.
+6. Include all direct effects in mediated or moderated relations as direct relations in the JSON as well!
+7. Make sure that each field (cause, effect, mediator and moderator) is at most one variable each!
+8. Before extracting, find the article's significance convention — usually a table note or methods sentence. Note what each marker (*, **, ***, †) means. When a tested path's significance is shown only by markers or stated in prose ("the effect was significant", "H2 was supported", "n.s.") and no exact p is printed, set p from that convention instead of leaving it null.
+
+JSON schema:

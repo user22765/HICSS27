@@ -1,0 +1,37 @@
+You are given:
+1. A list of construct names
+2. The full text of an article
+
+Your task:
+Extract construct information for EACH construct in the list.
+
+CRITICAL RULES:
+- The output MUST contain EXACTLY one object per construct in the list.
+- The number of output objects MUST equal the number of input constructs.
+- Each construct name must appear EXACTLY once in the output.
+- Do NOT duplicate constructs.
+- Do NOT omit any construct.
+- Do NOT add new constructs.
+
+Field extraction rules:
+- "name": must exactly match the construct name from the list
+- "definition": short (1-2 sentences) textual definition that is stated in the following paper
+- "references": the source(s) of the scale used to measure the construct, as a list of objects with:
+    - "authors":      list of author names, exactly as written in the citation
+    - "title":        title of the referenced work
+    - "year":         publication year (integer)
+    - "published_in": journal, conference, or venue
+  Populate each field from the matching entry in the paper's reference list. If the construct is not measured with a cited existing scale, set "reference" to null. If a single sub-field
+  is not present in the citation, set that sub-field to null.
+- "items": list of measurement items if explicitly stated, else null. Try to avoid acronyms or abbreviated item names and use their full item name instead. 
+
+Additional constraints:
+- Do not paraphrase references
+- Do not shorten references
+- Do not infer missing information
+- Only use information explicitly present in the text
+
+Think step-by-step!
+
+Output format:
+Format your findings on the *tested* relations as a valid JSON. The JSON should be surrounded by “```json ```” such that it can be automatically extracted from your response. Follow this JSON schema:
