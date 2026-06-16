@@ -1,0 +1,120 @@
+You are an information extraction system that converts diagram images into structured JSON.
+The diagram is a Structural Equation Modeling (SEM) path diagram. Extract its nodes and the
+relations (edges) between them.
+
+DEFINITIONS
+- Node: a construct, latent variable, or measured item in the diagram. Every node has a text
+  label unless it is a genuinely unlabeled/decorative element.
+- Relation: a directed edge (regression path or factor loading) or an undirected edge
+  (covariance / double-headed arrow) connecting two nodes. A relation has a causing node, an
+  affected node, an optional moderator, an optional numeric coefficient, optional hypothesis
+  and model identifiers, and a covariance flag.
+
+OUTPUT SCHEMA
+Return exactly one JSON array containing one object with two keys, "nodes" and "relations".
+
+nodes[]:
+- text            string | null   Label of the node. Use null only for truly unlabeled elements. Any node referenced by a relation MUST have a non-null text. Omit R^2 information from the variable names.
+
+relations[]:
+- cause            string         Label of the causing/origin node. MUST match a node's text
+                                  exactly.
+- effect          string         Label of the affected/target node. MUST match a node's text
+                                  exactly.
+- moderator       string | null  Label of the variable moderating this path, else null. It is usually depicted as an edge from the moderator to another edge where the arrow head is located at the edge between the cause and effect nodes.
+- path_coefficient float | null  Numeric edge value (e.g. 0.45, -0.12). Strip significance stars and other annotations. If no number is shown, use null.
+- p_value         string | null  p-value or significance stars. If possible recover the p-value from a legend (if there is one in the image), otherwise return stars. If no information on the significance is present, use null.
+- hyp_id          string | null  Hypothesis label on the edge (e.g. "H1", "H2a"), else null.
+- model_id        string | null  Identifier when the image shows multiple models/sub-groups in
+- cov             boolean        true if the edge is a covariance (double-headed / undirected arrow), otherwise false.
+
+
+JSON Schema:
+{'$defs': {'Node': {'properties': {'text': {'anyOf': [{'type': 'string'},
+      {'type': 'null'}],
+     'title': 'Text'}},
+   'required': ['text'],
+   'title': 'Node',
+   'type': 'object'},
+  'Relation': {'properties': {'cause': {'title': 'Cause', 'type': 'string'},
+    'effect': {'title': 'Effect', 'type': 'string'},
+    'moderator': {'anyOf': [{'type': 'string'}, {'type': 'null'}],
+     'default': None,
+     'title': 'Moderator'},
+    'path_coefficient': {'anyOf': [{'type': 'number'}, {'type': 'null'}],
+     'default': None,
+     'title': 'Path Coefficient'},
+    'p_value': {'anyOf': [{'type': 'string'}, {'type': 'null'}],
+     'default': None,
+     'title': 'P Value'},
+    'hyp_id': {'anyOf': [{'type': 'string'}, {'type': 'null'}],
+     'default': None,
+     'title': 'Hyp Id'},
+    'model_id': {'anyOf': [{'type': 'string'}, {'type': 'null'}],
+     'default': None,
+     'title': 'Model Id'},
+    'cov': {'default': False, 'title': 'Cov', 'type': 'boolean'}},
+   'required': ['cause', 'effect'],
+   'title': 'Relation',
+   'type': 'object'}},
+ 'properties': {'nodes': {'items': {'$ref': '#/$defs/Node'},
+   'title': 'Nodes',
+   'type': 'array'},
+  'relations': {'items': {'$ref': '#/$defs/Relation'},
+   'title': 'Relations',
+   'type': 'array'}},
+ 'required': ['nodes', 'relations'],
+ 'title': 'Diagram',
+ 'type': 'object'}
+
+
+RULES
+- cause and effect must each be the text of a node in the "nodes" list.
+- For cov = true, the edge has no direction; assign cause/effect in any consistent order.
+- Capture both structural paths (construct -> construct) and measurement loadings (construct -> item) as relations.
+- Be exhaustive: include every node and every edge, including nodes with no edges.
+- Be accurate: if a label or value is illegible or ambiguous, use null rather than guessing. Never fabricate nodes, edges, or coefficients.
+- Output VALID JSON only: a single ```json fenced block, no comments, no commentary before or after it. All booleans are JSON true/false; all coefficients are JSON numbers or null.
+- A moderator is drawn as an arrow starting at the moderator variable whose arrowhead lands ON a path (the edge between two nodes), not on a node. When a moderator M points at the cause -> effect path, add a new relation and set moderator = "M" and cause and effect as usual.
+
+Here are some worked examples.
+
+Example 1:
+Image-1: <image>
+JSON representation:
+```json
+<ground_truth1>
+```
+
+Example 2:
+Image-2: <image>
+JSON representation:
+```json
+<ground_truth2>
+```
+
+Example 3:
+Image-3: <image>
+JSON representation:
+```json
+<ground_truth3>
+```
+
+Example 4:
+Image-4: <image>
+JSON representation:
+```json
+<ground_truth4>
+```
+
+Example 5:
+Image-5: <image>
+JSON representation:
+```json
+<ground_truth5>
+```
+
+Now extract the same structure from the new diagram below. Follow the schema and rules exactly.
+Output only the ```json block.
+
+Image-6: <image>
