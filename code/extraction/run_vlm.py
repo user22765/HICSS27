@@ -1,8 +1,20 @@
 import os
+import re
 import json
+from PIL import Image
 from tqdm import tqdm
 from vllm import LLM, SamplingParams
 from transformers import AutoProcessor
+from PIL.Image import Image as PILImage
+from typing import NamedTuple, Optional
+from pydantic import BaseModel
+
+try:                                                  # newer vLLM
+    from vllm.sampling_params import StructuredOutputsParams as _SO
+    _SO_KW = "structured_outputs"
+except ImportError:                                   # older vLLM
+    from vllm.sampling_params import GuidedDecodingParams as _SO
+    _SO_KW = "guided_decoding"
 
 
 with open('../../prompts/relation_extraction_vlm.txt') as infile:
