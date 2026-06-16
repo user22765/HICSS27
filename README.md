@@ -14,7 +14,7 @@ The extraction and evaluation scripts can be found in the [`code/`](code) direct
 
 ## Manual evaluation
 
-The output of the manual evaluation for a fixed run of the combined results is available in [`code/evaluation/combined_equivalents_pubmed.json`](code/evaluation/combined_equivalents_pubmed.json).
+The output of the manual evaluation for a fixed run of the combined results is available in [`here`](code/evaluation/combined_equivalents_pubmed.json).
 
 In this file, keys are ground-truth construct names and values are the corresponding extracted construct names.
 
