@@ -1,0 +1,213 @@
+{
+  "art_1.json": {
+    "learning achievement": "academic achievement"
+  },
+  "art_10.json": {
+    "learning resources availability: workplace availability": "workplace availability",
+    "remote teaching activities: tutorials": "tutorials",
+    "well-being changes: social support": "social support",
+    "well-being changes: well-being": "well-being changes"
+  },
+  "art_11.json": {
+    "patient centred care": "person-centred care",
+    "personal well-being": "personal well-being index",
+    "quality of life": "work-related quality of life"
+  },
+  "art_12.json": {
+    "abusive supervision": "perceived abusive supervision"
+  },
+  "art_13.json": {
+    "attitude": "attitude towards diabetes care",
+    "counseling on the drug intake and compliance plays an important role in the disease prognosis": "belief that counseling on drug intake and compliance plays an important role in disease prognosis",
+    "diabetic patients": "perceived approval from diabetic patients",
+    "intention": "intention to provide diabetes care",
+    "patient's relatives": "perceived approval from patients' relatives",
+    "regular screening for complications can improve quality of life for diabetic patiens": "belief that regular screening for complications can improve quality of life for diabetic patients"
+  },
+  "art_14.json": {
+    "role stress of managers": "managers' role stress"
+  },
+  "art_15.json": {
+    "access to credit facility": "access to credit facilities"
+  },
+  "art_21.json": {
+    "usage behavior": "use behavior"
+  },
+  "art_24.json": {
+    "discontinous usage intention": "discontinuous usage intention"
+  },
+  "art_25.json": {
+    "hpv susceptibility": "perceived hpv susceptibility",
+    "intention to vaccinate": "parents' intention to vaccinate their daughters against hpv",
+    "response efficacy": "perceived response efficacy of hpv vaccines",
+    "secondary risk": "perceived secondary risk"
+  },
+  "art_26.json": {
+    "impaired control over drinking": "impaired control over alcohol"
+  },
+  "art_27.json": {
+    "physical activity level": "physical activity",
+    "self-efficacy of exercise": "exercise self-efficacy"
+  },
+  "art_30.json": {
+    "constraint": "constraints"
+  },
+  "art_33.json": {
+    "behavioral intentions": "behavioral intention",
+    "effort expectancy": "effort expectation",
+    "performance expectancy": "performance expectation",
+    "social impact": "social influence"
+  },
+  "art_37.json": {
+    "fear of aging": "fears of aging"
+  },
+  "art_4.json": {
+    "basic religiosity": "basic religiosity"
+  },
+  "art_41.json": {
+    "confirmation": "user confirmation",
+    "continuance intention": "telemedicine continuance intention",
+    "perceived usefulness": "user-perceived usefulness",
+    "physician-based trust": "physician-based user trust",
+    "platform-based trust": "platform-based user trust",
+    "privacy concerns": "personal privacy concerns",
+    "satisfaction": "user satisfaction",
+    "structural assurance trust": "structural assurance-based user trust"
+  },
+  "art_42.json": {
+    "communicant awareness": "communicant activeness"
+  },
+  "art_44.json": {
+    "behavior change": "attitude towards behavior change",
+    "cancer detection": "perception of cancer detection",
+    "cancer prevention": "perception of cancer prevention",
+    "cancer treatment": "perception of cancer treatment",
+    "everything causes cancer": "attitude towards everything causes cancer",
+    "genetic testing": "uptake of genetic testing",
+    "healthcare provider": "healthcare provider"
+  },
+  "art_50.json": {
+    "resources integration": "resource integration"
+  },
+  "art_54.json": {
+    "brief-cope - avoidant/dysfunctional strategies": "brief-cope - avoidant/ dysfunctional strategies",
+    "ghsq - emotional/ personal problems": "ghsq- emotional/ personal problems",
+    "ghsq - suicidal thoughts": "ghsq- suicidal thoughts"
+  },
+  "art_55.json": {
+    "anxiety": "prenatal anxiety"
+  },
+  "art_58.json": {
+    "perceived behavior controls": "perceived behavioral controls"
+  },
+  "art_59.json": {
+    "mental health": "perinatal mental health",
+    "professional support": "perceived professional healthcare support"
+  },
+  "art_60.json": {
+    "< 18 months in germany": "length of stay in germany (<18 months)",
+    "ambulatory mental healthcare": "mental healthcare utilization",
+    "ambulatory physical care": "ambulatory care utilization",
+    "anxiety": "symptoms of anxiety",
+    "depression": "depressive symptoms",
+    "emergency care (outcome)": "emergency care utilization"
+  },
+  "art_63.json": {
+    "cultural service": "cultural services",
+    "precipation pressure": "precipitation",
+    "temperature pressure": "temperature"
+  },
+  "art_64.json": {
+    "health risks": "risks"
+  },
+  "art_66.json": {
+    "emotional responses": "emotional response",
+    "special treatment advantages": "special treatment benefits"
+  },
+  "art_67.json": {
+    "phod community diversity": "phod-harboring bacterial community diversity",
+    "phod community richness": "phod-harboring bacterial community richness"
+  },
+  "art_7.json": {
+    "mental health": "mental health component",
+    "physical health": "physical health component",
+    "positive relationships with friends and school teachers": "positive perceptions of relationships with friends and school teachers"
+  },
+  "art_70.json": {
+    "diabetes": "diabetes diagnosis",
+    "frequency of sweets": "frequency of sweets consumption",
+    "overweight": "overweight status",
+    "pre-diabetes": "pre-diabetes diagnosis"
+  },
+  "art_73.json": {
+    "cognitive demands": "cognitive demands at work",
+    "emotional demands": "emotional demands at work",
+    "team learning behaviours": "team learning behaviors",
+    "team members work engagement": "work engagement"
+  },
+  "art_74.json": {
+    "self-efficacy": "self-efficacy for managing chronic disease"
+  },
+  "art_78.json": {
+    "attitude": "healthy eating attitude",
+    "knowledge": "healthy eating knowledge",
+    "practice": "healthy eating practices"
+  },
+  "art_79.json": {
+    "attitude toward the behavior (ab)": "attitude toward the behavior",
+    "financing behavior (fb)": "financing behavior",
+    "financing intentions(fn)": "financing intentions",
+    "perceived behavior control (pbc)": "perceived behavior control",
+    "subject norm (sn)": "subjective norms"
+  },
+  "art_8.json": {
+    "donation (0-1)": "donation (binary)",
+    "frequencies of osis": "frequencies of online social interactions",
+    "whether osis": "whether online social interactions"
+  },
+  "art_81.json": {
+    "students motivation": "student motivation"
+  },
+  "art_82.json": {
+    "fear of missing out state": "fear of missing out (state)",
+    "fear of missing out trait": "fear of missing out (trait)",
+    "presence": "presence of meaning in life",
+    "search": "search for meaning in life"
+  },
+  "art_91.json": {
+    "labile p": "labile p fractions",
+    "moderately labile p": "moderately labile p fractions",
+    "non-labile p": "non-labile p fractions",
+    "ph": "soil ph",
+    "sparingly labile p": "sparingly labile p fractions",
+    "toc": "total organic carbon"
+  },
+  "art_93.json": {
+    "socioeconomic status": "socioeconomic status (capses)"
+  },
+  "art_94.json": {
+    "continuance usage intention": "continuous usage intention",
+    "perceive information quality": "perceived information quality"
+  },
+  "art_95.json": {
+    "consultation with a mental health specialist": "consultation with a mental health specialist before pregnancy",
+    "infant hospitalization": "infant hospitalisation since returning from the maternity hospital stay",
+    "infant self-regulations difficulties": "infant self-regulation difficulties",
+    "lack of perceived antenatal emotional support from partner": "lack of perceived antenatal emotional support",
+    "lack of perceived postnatal instrumental support in baby’s care": "lack of perceived postnatal instrumental support in caring for the baby",
+    "maternal difficulty to understand infant's cries": "maternal difficulty in understanding an infant's cries",
+    "pnds at 2 months": "maternal postnatal depressive symptoms"
+  },
+  "art_96.json": {
+    "happiness in a rural tourism destination": "happiness seeking in rural tourism destinations",
+    "health-seeking in rural toursim destinations": "health seeking in rural tourism destinations",
+    "promotion of rural tourism destination": "promotion of rural tourism destinations"
+  },
+  "art_98.json": {
+    "subjective well-being": "subjective wellbeing"
+  },
+  "art_99.json": {
+    "handoff's and information exchange": "handoffs and information exchange",
+    "overall patient safety": "patient safety"
+  }
+}
